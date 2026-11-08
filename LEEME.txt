@@ -1,0 +1,31 @@
+STAGELAB X PROFESSIONAL STUDIO
+Paquete PWA de trabajo — versión 2.0
+
+ARCHIVOS
+- index.html: aplicación principal.
+- manifest.webmanifest: instalación PWA.
+- sw.js: caché offline de la aplicación.
+- icon.svg: icono.
+
+INSTALACIÓN EN GITHUB PAGES
+1. Haz una copia de seguridad del repositorio actual.
+2. Sube los cuatro archivos a la raíz del repositorio.
+3. Activa GitHub Pages desde Settings > Pages si aún no está activo.
+4. Abre la URL HTTPS publicada en Safari.
+5. En iPhone: Compartir > Añadir a pantalla de inicio.
+6. Si ves una versión anterior, cierra la PWA y recarga Safari; la caché del service worker puede tardar en actualizarse.
+
+FUNCIONES OPERATIVAS
+Diseño 2D, frontal, lateral y axonométrico; biblioteca de equipos; edición de posición XYZ, giro, peso, DMX, intensidad y color; historial atrás/delante; duplicar/eliminar; guardado local; JSON importar/exportar; patch DMX con detección de solapamientos; grupos y cues de referencia; estimación simplificada de lux; registro de IES/LDT; inventario de masas; hoja de red Art-Net/sACN; exportación CSV; impresión PDF.
+
+LIMITACIONES IMPORTANTES
+- La vista denominada 3D es axonométrica 2D, no un motor 3D CAD.
+- El análisis lux es una aproximación de haz circular, no cálculo fotométrico certificado.
+- Los archivos IES/LDT se registran como referencia, no se simulan punto a punto.
+- No transmite DMX, Art-Net ni sACN.
+- Rigging es inventario de masas y comparación aritmética simple, no cálculo estructural ni autorización de izaje.
+- Los perfiles de equipos son genéricos; reemplazar datos con especificaciones verificadas de fabricante.
+- La impresión PDF usa el diálogo de impresión del navegador.
+
+VALIDACIÓN
+Probar primero en escritorio y Safari iPhone con un proyecto de ensayo. Exportar un JSON de respaldo antes de cambios importantes.
