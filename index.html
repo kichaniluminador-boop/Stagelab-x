@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#080d14"><title>STAGELAB X 4.7 · 3D Studio</title>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#080d14"><title>STAGELAB X 5.1 · 3D Studio</title>
 <style>
 :root{--bg:#080d14;--panel:#111b29;--line:#2b3c50;--txt:#edf4fc;--muted:#9aadc2;--a:#35c6b0}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px system-ui,-apple-system,Segoe UI,sans-serif}header{height:58px;padding:8px 13px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#0c1420}header strong{letter-spacing:1.5px}header small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px}button,select,input{font:inherit;color:inherit}button,select{background:#1a293a;border:1px solid var(--line);border-radius:9px;padding:8px 10px}button:active{border-color:var(--a)}.primary{background:var(--a);color:#061512;font-weight:800;border-color:var(--a)}main{height:calc(100dvh - 58px);display:grid;grid-template-columns:215px 1fr 240px;gap:9px;padding:9px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:auto;min-width:0}.panel h3{font-size:11px;letter-spacing:1.3px;color:#b9c9da;padding:12px;margin:0;border-bottom:1px solid var(--line)}.items{padding:9px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.items button{text-align:left;font-size:11px;min-height:49px}.items button span{display:block;font-size:18px}.items button.active{border-color:var(--a);background:#163431}.group{grid-column:1/-1;color:var(--muted);font-size:10px;letter-spacing:1px;padding:7px 1px 0}.center{display:flex;flex-direction:column;gap:8px;min-width:0;min-height:0}.bar{position:relative;display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:var(--panel);padding:8px;border:1px solid var(--line);border-radius:11px}.bar .grow{flex:1}.view{flex:1;position:relative;min-height:250px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#182638,#070b11 70%)}#stage3d{width:100%;height:100%;display:block;touch-action:none}.hint{position:absolute;top:10px;left:10px;background:#07111dcc;color:#b5c7d9;border:1px solid #33465b;border-radius:7px;padding:6px 9px;font-size:10px;pointer-events:none}.hint2{position:absolute;bottom:10px;left:10px;color:#b5c7d9;background:#07111dcc;border-radius:7px;padding:6px 9px;font-size:10px;pointer-events:none}.props{padding:11px;display:grid;gap:9px}.field label{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}.field input{width:100%;background:#0a121d;border:1px solid var(--line);border-radius:7px;padding:8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:7px}.inventory{padding:10px;display:grid;gap:5px;font-size:11px;color:var(--muted)}.inventory b{color:white}.foot{font-size:10px;color:var(--muted);padding:10px}.mobiletools{display:none}
-.place-menu{display:none;position:absolute;z-index:30;top:calc(100% + 7px);left:8px;width:min(360px,calc(100vw - 32px));max-height: min(65vh,520px);overflow:auto;padding:12px;background:#0c1521;border:1px solid #40546b;border-radius:12px;box-shadow:0 16px 40px #000b;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.center>.bar:first-child{position:relative;z-index:100}.place-menu{display:none;position:absolute;z-index:9999;top:calc(100% + 7px);left:8px;width:min(360px,calc(100vw - 32px));max-height: min(65vh,520px);overflow:auto;padding:12px;background:#0c1521;border:1px solid #40546b;border-radius:12px;box-shadow:0 16px 40px #000b;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 .place-menu.open{display:grid}
 .place-menu .group{grid-column:1/-1;padding-top:8px}
 .place-menu button{min-height:40px;text-align:left;background:#111e2d;border:1px solid #2a3b4e;border-radius:8px;padding:9px;font-size:12px}
@@ -11,7 +11,7 @@
 
 @media(max-width:850px){main{display:flex;flex-direction:column;height:auto;min-height:calc(100dvh - 58px)}.center{order:0}.view{height:58vh;min-height:400px;flex:none}.left{order:1}.right{order:2}.items{grid-template-columns:repeat(3,1fr)}.group{grid-column:1/-1}.props{grid-template-columns:1fr 1fr}.panel h3{position:sticky;top:0;background:var(--panel);z-index:2}.bar button,.bar select{font-size:12px;padding:8px}}
 </style></head><body>
-<header><div><strong>STAGELAB X</strong><small>MOVER Y GIRAR · 4.7</small></div><div style="display:flex;gap:6px"><button id="undo">↶</button><button id="save">Guardar</button></div></header>
+<header><div><strong>STAGELAB X</strong><small>UNIÓN MAGNÉTICA DE TRUSS Y LUMINARIAS · 5.1</small></div><div style="display:flex;gap:6px"><button id="undo">↶</button><button id="save">Guardar</button></div></header>
 <main>
 <aside class="panel left"><h3>BIBLIOTECA 3D · TOCA PARA AGREGAR</h3><div class="items" id="library">
 <div class="group">ESTRUCTURA</div>
@@ -24,7 +24,7 @@
 <button data-kind="drums"><span>♬</span>Batería</button><button data-kind="guitar"><span>♬</span>Guitarra</button><button data-kind="mic"><span>♩</span>Micrófono</button><button data-kind="audience"><span>♟</span>Público</button><button data-kind="barrier"><span>▥</span>Valla</button>
 </div><div class="foot">Selecciona un equipo y pulsa sobre el escenario para colocarlo. En 3D: un dedo gira, dos dedos hacen zoom y el botón derecho/segundo dedo permite desplazar la cámara.</div></aside>
 <section class="center"><div class="bar"><select id="view"><option value="free">3D libre</option><option value="front">Frontal</option><option value="side">Lateral</option><option value="top">Planta</option></select><button id="home">Centrar cámara</button><button id="grid">Cuadrícula ON</button><button id="placeMode" class="primary">Colocar ▾</button><div id="placeMenu" class="place-menu" aria-label="Elegir elemento"></div><button id="selectMode">Seleccionar</button><button id="moveTool">↔ Mover</button><button id="rotateTool">⟳ Girar</button><span class="grow"></span><button id="delete">Eliminar seleccionado</button><button id="png" class="primary">Capturar PNG</button></div>
-<div class="view"><canvas id="stage3d"></canvas><div class="hint">VISTA 3D INTERACTIVA · ÓRBITA 360°</div><div class="hint2">Arrastra para girar · Pellizca para zoom · Toca para colocar/seleccionar</div></div>
+<div class="view"><canvas id="stage3d"></canvas><div class="hint">VISTA 3D INTERACTIVA · ÓRBITA 360°</div><div class="hint2">Truss se une extremo a extremo · Luminarias se acercan al truss para colgarse</div></div>
 <div class="bar"><span id="count" style="font-size:11px;color:var(--muted)">Elementos: 0</span><span class="grow"></span><button id="export">Exportar proyecto</button><button id="import">Abrir proyecto</button><input id="file" type="file" accept=".json" hidden></div></section>
 <aside class="panel right"><h3>ESCENARIO / PROPIEDADES</h3><div class="props">
 <div class="field"><label>Nombre del diseño</label><input id="title" value="Mi escenario"></div>
@@ -52,7 +52,7 @@ scene.add(transform.getHelper());
 transform.setMode('translate');
 transform.setSpace('world');
 transform.setSize(1.05);
-transform.addEventListener('dragging-changed',e=>{controls.enabled=!e.value});
+transform.addEventListener('dragging-changed',e=>{controls.enabled=!e.value;if(!e.value&&selected){selected.updateMatrixWorld(true);if(selected.userData.kind==='truss')snapTruss(selected);else snapFixture(selected);choose(selected)}});
 transform.addEventListener('objectChange',()=>{if(selected){$('x').value=selected.position.x.toFixed(2);$('y').value=selected.position.z.toFixed(2);$('z').value=selected.position.y.toFixed(2);$('rot').value=(selected.rotation.y*180/Math.PI).toFixed(1);$('rotX').value=(selected.rotation.x*180/Math.PI).toFixed(1);$('rotZ').value=(selected.rotation.z*180/Math.PI).toFixed(1);render()}});
 
 scene.add(new THREE.HemisphereLight(0xbdd7ff,0x28303c,2));const key=new THREE.DirectionalLight(0xffffff,2.4);key.position.set(-8,18,12);key.castShadow=true;scene.add(key);const fill=new THREE.DirectionalLight(0x77aaff,1.1);fill.position.set(12,9,-10);scene.add(fill);
@@ -81,12 +81,63 @@ else if(kind==='mic'){cyl(g,.055,.055,1,mats.silver,0,.5,0);cyl(g,.09,.09,.18,ma
 else if(kind==='barrier'){for(let x=-1;x<=1;x+=.5)box(g,.08,.9,.08,mats.al,x,.45,0);box(g,2,.12,.08,mats.al,0,.8,0)}
 else if(kind==='audience'){for(let x=0;x<3;x++)for(let z=0;z<2;z++){let px=(x-1)*.65,pz=(z-.5)*.7;let mat=new THREE.MeshStandardMaterial({color:[0x526b91,0x9a705e,0x607c71,0x8d789e][(x+z)%4]});cyl(g,.16,.18,.38,mat,px,.45,pz);let head=new THREE.Mesh(new THREE.SphereGeometry(.14,12,10),mat);head.position.set(px,.78,pz);head.castShadow=true;g.add(head)}}
 g.position.set(0,0,0);g.traverse(o=>{if(o.isMesh)o.userData.owner=g});return g}
-function add(kind,point){history.push(serialize());let g=make(kind);g.position.set(point?.x??(Math.random()-.5)*5,point?.y??0,point?.z??(Math.random()-.5)*3);if(kind==='screen')g.position.set(0,3,-3.8);if(kind==='totem')g.position.y=0;if(kind==='beam'||kind==='wash'||kind==='spot'||kind==='par'||kind==='blinder')g.position.y=4.8;g.userData.dmxU=1;g.userData.dmxA=1;g.userData.rot=0;root.add(g);objects.push(g);choose(g);updateInventory()}
+function snapTruss(g){
+ if(!g||g.userData.kind!=='truss')return false;
+ const ends=[-2,2].map(x=>new THREE.Vector3(x,0,0).applyMatrix4(g.matrixWorld));
+ let best=null,bestDist=.65;
+ for(const other of objects){
+  if(other===g||other.userData.kind!=='truss')continue;
+  other.updateMatrixWorld(true);
+  const otherEnds=[-2,2].map(x=>new THREE.Vector3(x,0,0).applyMatrix4(other.matrixWorld));
+  const yawA=g.rotation.y,yawB=other.rotation.y;
+  const angle=Math.abs(Math.atan2(Math.sin(yawA-yawB),Math.cos(yawA-yawB)));
+  const parallel=Math.min(angle,Math.abs(Math.PI-angle));
+  if(parallel>THREE.MathUtils.degToRad(18))continue;
+  for(const a of ends)for(const b of otherEnds){
+   const dist=a.distanceTo(b);
+   if(dist<bestDist){bestDist=dist;best={a,b}}
+  }
+ }
+ if(best){
+  g.position.add(best.b.clone().sub(best.a));
+  g.updateMatrixWorld(true);
+  return true;
+ }
+ return false;
+}
+function snapFixture(g){
+ const fixtureKinds=['beam','wash','spot','par','bar','blinder'];
+ if(!g||!fixtureKinds.includes(g.userData.kind))return false;
+ const fixturePoint=g.position.clone();
+ let best=null,bestDist=.9;
+ for(const tr of objects){
+  if(tr.userData.kind!=='truss')continue;
+  tr.updateMatrixWorld(true);
+  // Check the four longitudinal rails of a 4 m truss.
+  for(const yy of [-.16,.16])for(const zz of [-.16,.16]){
+   const local=new THREE.Vector3(0,yy,zz);
+   const world=local.applyMatrix4(tr.matrixWorld);
+   const d=world.distanceTo(fixturePoint);
+   if(d<bestDist){bestDist=d;best={world,tr}}
+  }
+ }
+ if(best){
+  // Keep the luminaire attached at the nearest rail, with its body just below the truss.
+  const target=best.world.clone();
+  target.y-=.38;
+  g.position.copy(target);
+  g.userData.attachedTruss=objects.indexOf(best.tr);
+  return true;
+ }
+ g.userData.attachedTruss=null;
+ return false;
+}
+function add(kind,point){history.push(serialize());let g=make(kind);g.position.set(point?.x??(Math.random()-.5)*5,point?.y??0,point?.z??(Math.random()-.5)*3);if(kind==='screen')g.position.set(0,3,-3.8);if(kind==='totem')g.position.y=0;if(kind==='beam'||kind==='wash'||kind==='spot'||kind==='par'||kind==='blinder')g.position.y=4.8;g.userData.dmxU=1;g.userData.dmxA=1;g.userData.rot=0;root.add(g);objects.push(g);g.updateMatrixWorld(true);if(kind==='truss')snapTruss(g);else snapFixture(g);choose(g);updateInventory()}
 function choose(g){selected=g;if(g){transform.attach(g)}else{transform.detach()}objects.forEach(o=>o.traverse(m=>{if(m.isMesh){m.material.emissive?.setHex(m.userData.owner===selected?0x142c36:0x000000)}}));$('selected').value=g?g.userData.label:'Ninguno';if(g){$('x').value=g.position.x.toFixed(1);$('y').value=g.position.z.toFixed(1);$('z').value=g.position.y.toFixed(1);$('rot').value=g.rotation.y*180/Math.PI;$('rotX').value=g.rotation.x*180/Math.PI;$('rotZ').value=g.rotation.z*180/Math.PI;$('u').value=g.userData.dmxU||1;$('a').value=g.userData.dmxA||1}render()}
 function updateInventory(){$('count').textContent='Elementos: '+objects.length;let counts={};objects.forEach(o=>counts[o.userData.kind]=(counts[o.userData.kind]||0)+1);$('inventory').innerHTML=Object.keys(counts).length?Object.entries(counts).map(([k,v])=>`<div>${labels[k]} <b>× ${v}</b></div>`).join(''):'Todavía no hay equipos.'}
 function render(){renderer.render(scene,camera)}
 function resize(){let r=canvas.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();render()}
-function serialize(){return {version:'4.7',title:$('title').value,stage:{w:+$('sw').value,d:+$('sd').value,h:+$('sh').value},objects:objects.map(o=>({kind:o.userData.kind,x:o.position.x,y:o.position.y,z:o.position.z,rotX:o.rotation.x,rotY:o.rotation.y,rotZ:o.rotation.z,u:o.userData.dmxU,a:o.userData.dmxA}))}}
+function serialize(){return {version:'5.1',title:$('title').value,stage:{w:+$('sw').value,d:+$('sd').value,h:+$('sh').value},objects:objects.map(o=>({kind:o.userData.kind,x:o.position.x,y:o.position.y,z:o.position.z,rotX:o.rotation.x,rotY:o.rotation.y,rotZ:o.rotation.z,u:o.userData.dmxU,a:o.userData.dmxA}))}}
 function restore(d){objects.forEach(o=>root.remove(o));objects=[];$('title').value=d.title||'Mi escenario';$('sw').value=d.stage?.w||12;$('sd').value=d.stage?.d||8;$('sh').value=d.stage?.h||6;makeStage();(d.objects||[]).forEach(v=>{let g=make(v.kind);g.position.set(v.x||0,v.y||0,v.z||0);g.rotation.set(v.rotX||0,v.rotY||v.rot||0,v.rotZ||0);g.userData.dmxU=v.u||1;g.userData.dmxA=v.a||1;root.add(g);objects.push(g)});choose(null);updateInventory()}
 let stageGroup=new THREE.Group();scene.add(stageGroup);
 function makeStage(){
@@ -105,24 +156,50 @@ function makeStage(){
 }
 makeStage();
 const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let plane=new THREE.Plane(new THREE.Vector3(0,1,0),0),hitPoint=new THREE.Vector3();
-let pressStart=null,activePointers=new Set(),gestureMoved=false;
+let pressStart=null,activePointers=new Set(),gestureMoved=false;let manipulationMode='translate',holdCandidate=null,holdStart=null,directDrag=false,lastDrag={x:0,y:0};
 canvas.addEventListener('pointerdown',e=>{
  activePointers.add(e.pointerId);
- if(activePointers.size>1){gestureMoved=true;pressStart=null;return;}
+ if(activePointers.size>1){gestureMoved=true;pressStart=null;holdCandidate=null;return;}
  pressStart={x:e.clientX,y:e.clientY,id:e.pointerId};
- gestureMoved=false;
+ gestureMoved=false;holdCandidate=null;holdStart=null;directDrag=false;
+ // Mantener presionado sobre el objeto seleccionado permite manipularlo directamente.
+ if(selected && mode==='select' && transform.axis===null){
+   let r=canvas.getBoundingClientRect();
+   mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
+   ray.setFromCamera(mouse,camera);
+   const hits=ray.intersectObjects(root.children,true);
+   if(hits.length && hits[0].object.userData.owner===selected){
+     holdCandidate=selected;holdStart={x:e.clientX,y:e.clientY,time:Date.now()};
+   }
+ }
 });
 canvas.addEventListener('pointermove',e=>{
  if(!pressStart||pressStart.id!==e.pointerId)return;
- if(Math.hypot(e.clientX-pressStart.x,e.clientY-pressStart.y)>9)gestureMoved=true;
+ const dx=e.clientX-pressStart.x,dy=e.clientY-pressStart.y;
+ if(holdCandidate && holdStart && Date.now()-holdStart.time>300 && Math.hypot(dx,dy)>3){
+   directDrag=true;gestureMoved=true;controls.enabled=false;
+   if(manipulationMode==='translate'){
+     let r=canvas.getBoundingClientRect();mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
+     ray.setFromCamera(mouse,camera);let dragPlane=new THREE.Plane(new THREE.Vector3(0,1,0),-holdCandidate.position.y);
+     if(ray.ray.intersectPlane(dragPlane,hitPoint)){holdCandidate.position.x=hitPoint.x;holdCandidate.position.z=hitPoint.z;}
+   }else{
+     holdCandidate.rotation.y+=dx*.012;
+     holdCandidate.rotation.x+=dy*.008;
+   }
+   pressStart.x=e.clientX;pressStart.y=e.clientY;
+   $('x').value=holdCandidate.position.x.toFixed(2);$('y').value=holdCandidate.position.z.toFixed(2);$('z').value=holdCandidate.position.y.toFixed(2);
+   $('rot').value=(holdCandidate.rotation.y*180/Math.PI).toFixed(1);$('rotX').value=(holdCandidate.rotation.x*180/Math.PI).toFixed(1);
+   render();return;
+ }
+ if(Math.hypot(dx,dy)>9)gestureMoved=true;
 });
 canvas.addEventListener('pointerup',e=>{
  activePointers.delete(e.pointerId);
+ if(directDrag){if(holdCandidate){holdCandidate.updateMatrixWorld(true);if(holdCandidate.userData.kind==='truss')snapTruss(holdCandidate);else snapFixture(holdCandidate);choose(holdCandidate)}directDrag=false;controls.enabled=true;pressStart=null;holdCandidate=null;holdStart=null;return;}
  if(!pressStart||pressStart.id!==e.pointerId)return;
  const moved=gestureMoved||Math.hypot(e.clientX-pressStart.x,e.clientY-pressStart.y)>9;
  const wasMulti=activePointers.size>0;
- const start=pressStart;pressStart=null;
- // A drag rotates the camera; a two-finger gesture zooms. Neither adds equipment.
+ pressStart=null;holdCandidate=null;holdStart=null;
  if(moved||wasMulti)return;
  let r=canvas.getBoundingClientRect();
  mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
@@ -138,20 +215,23 @@ canvas.addEventListener('pointerup',e=>{
 canvas.addEventListener('pointercancel',e=>{activePointers.delete(e.pointerId);pressStart=null;gestureMoved=true;});
 // El menú del botón Colocar reutiliza todos los elementos de la biblioteca.
 $('placeMenu').innerHTML=$('library').innerHTML;
+if(!$('placeMenu').querySelector('[data-kind]')){
+ $('placeMenu').innerHTML='<div class="group">ESTRUCTURA</div><button data-kind="truss">▰ Truss aluminio</button><button data-kind="stage">▦ Tarima</button><button data-kind="screen">▣ Pantalla LED</button><button data-kind="totem">▯ Totem LED</button><div class="group">ILUMINACIÓN</div><button data-kind="beam">✦ Beam 200W</button><button data-kind="wash">◉ Wash 200W</button><button data-kind="spot">✧ Spot móvil</button><button data-kind="par">● Par LED</button><button data-kind="bar">━ Barra LED</button><button data-kind="blinder">▤ Blinder</button><div class="group">AUDIO</div><button data-kind="pa">◧ Line array</button><button data-kind="sub">▣ Subwoofer</button><button data-kind="monitor">◩ Monitor</button><button data-kind="console">▥ Consola</button><div class="group">BACKLINE / PÚBLICO</div><button data-kind="drums">Batería</button><button data-kind="guitar">Guitarra</button><button data-kind="mic">Micrófono</button><button data-kind="audience">Público</button><button data-kind="barrier">Vallas</button>';
+}
 document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',e=>{
  e.preventDefault();e.stopPropagation();
  document.querySelectorAll('[data-kind]').forEach(x=>x.classList.remove('active'));
  b.classList.add('active');active=b.dataset.kind;mode='place';
  $('placeMode').textContent='Colocar ▾';
- $('placeMenu').classList.remove('open');
+ $('placeMenu').classList.remove('open');$('placeMenu').style.display='none';
  $('placeMode').classList.add('primary');$('selectMode').classList.remove('primary');
 }));
-$('moveTool').onclick=()=>{transform.setMode('translate');$('moveTool').classList.add('primary');$('rotateTool').classList.remove('primary');if(selected)transform.attach(selected)};
-$('rotateTool').onclick=()=>{transform.setMode('rotate');$('rotateTool').classList.add('primary');$('moveTool').classList.remove('primary');if(selected)transform.attach(selected)};
+$('moveTool').onclick=()=>{manipulationMode='translate';transform.setMode('translate');$('moveTool').classList.add('primary');$('rotateTool').classList.remove('primary');if(selected)transform.attach(selected)};
+$('rotateTool').onclick=()=>{manipulationMode='rotate';transform.setMode('rotate');$('rotateTool').classList.add('primary');$('moveTool').classList.remove('primary');if(selected)transform.attach(selected)};
 $('moveTool').classList.add('primary');
 $('view').onchange=()=>{let v=$('view').value,t=controls.target;if(v==='front')camera.position.set(0,5,25);else if(v==='side')camera.position.set(25,5,0);else if(v==='top')camera.position.set(0,35,.01);else camera.position.set(16,13,19);controls.target.set(0,2,0);controls.update();render()};
 $('home').onclick=()=>{$('view').value='free';camera.position.set(16,13,19);controls.target.set(0,2,0);controls.update();render()};
-$('placeMode').onclick=()=>{mode='place';$('placeMenu').classList.toggle('open');$('placeMode').classList.add('primary');$('selectMode').classList.remove('primary')};
+$('placeMode').onclick=()=>{mode='place';$('placeMenu').classList.toggle('open');$('placeMenu').style.display=$('placeMenu').classList.contains('open')?'grid':'none';$('placeMode').classList.add('primary');$('selectMode').classList.remove('primary')};
 $('selectMode').onclick=()=>{mode='select';$('selectMode').classList.add('primary');$('placeMode').classList.remove('primary')};
 
 $('grid').onclick=()=>{grid.visible=!grid.visible;$('grid').textContent='Cuadrícula '+(grid.visible?'ON':'OFF')};
