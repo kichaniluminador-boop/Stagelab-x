@@ -1,7 +1,7 @@
 {
   "name": "STAGELAB X Professional Studio",
   "short_name": "STAGELAB X",
-  "description": "Estudio profesional de diseño escenográfico 2D, 3D y SHOW",
+  "description": "Estudio de diseño escenográfico 2D, 3D y SHOW",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

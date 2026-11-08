@@ -91,7 +91,27 @@ function download(blob,name){let a=document.createElement('a'),url=URL.createObj
 function save(){let d=projectData();localStorage.setItem('stagelab_x_project',JSON.stringify(d));download(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}),'STAGELAB-X-proyecto.json')}
 $('saveProject').onclick=save;$('exportJSON').onclick=save;$('newProject').onclick=()=>{if(confirm('¿Crear un proyecto nuevo? Guarda primero el actual si lo necesitas.')){objects=[];select(null);update()}};
 $('importJSON').onclick=()=>$('fileInput').click();$('fileInput').onchange=async e=>{try{let d=JSON.parse(await e.target.files[0].text());objects=d.objects||[];$('projectName').value=d.project||'';Object.entries(d.stage||{}).forEach(([k,v])=>$(k==='w'?'stageW':k==='d'?'stageD':'stageH').value=v);if(d.document)Object.entries(d.document).forEach(([k,v])=>$(k).value=v);logoData=d.logo||'';select(null);update()}catch{alert('El archivo no es un proyecto STAGELAB válido')}e.target.value=''};
-$('exportPNG').onclick=()=>{draw();canvas.toBlob(b=>download(b,'STAGELAB-X-vista.png'))};
+
+$('exportPNG').onclick=()=>{
+ const out=document.createElement('canvas');out.width=3000;out.height=2000;
+ const c=out.getContext('2d'),W=+$('stageW').value||12,D=+$('stageD').value||8;
+ const minX=Math.min(-W/2,...objects.map(o=>o.x-o.w/2)),maxX=Math.max(W/2,...objects.map(o=>o.x+o.w/2));
+ const minY=Math.min(-D/2,...objects.map(o=>o.y-o.d/2)),maxY=Math.max(D/2,...objects.map(o=>o.y+o.d/2));
+ const margin=260,u=Math.min((out.width-2*margin)/(maxX-minX),(out.height-2*margin)/(maxY-minY));
+ const cx=out.width/2-(minX+maxX)*u/2,cy=out.height/2-(minY+maxY)*u/2;
+ c.fillStyle='#080d14';c.fillRect(0,0,out.width,out.height);c.strokeStyle='#26394e';c.lineWidth=2;
+ for(let x=Math.floor(minX);x<=Math.ceil(maxX);x++){c.beginPath();c.moveTo(cx+x*u,cy-maxY*u);c.lineTo(cx+x*u,cy-minY*u);c.stroke()}
+ for(let y=Math.floor(minY);y<=Math.ceil(maxY);y++){c.beginPath();c.moveTo(cx+minX*u,cy+y*u);c.lineTo(cx+maxX*u,cy+y*u);c.stroke()}
+ c.strokeStyle='#c1d1df';c.lineWidth=6;c.strokeRect(cx-W*u/2,cy-D*u/2,W*u,D*u);
+ c.fillStyle='#edf4fc';c.font='bold 44px Arial';c.fillText($('projectName').value||'STAGELAB X',90,90);
+ c.font='30px Arial';c.fillText('PLANTA · '+W+' × '+D+' m · ALTURA '+$('stageH').value+' m',90,140);
+ for(const o of objects){let x=cx+o.x*u,y=cy+o.y*u;c.save();c.translate(x,y);c.rotate((o.rot||0)*Math.PI/180);let w=Math.max(18,o.w*u),h=Math.max(16,o.d*u);
+ c.fillStyle=['truss','tower','roof'].includes(o.kind)?'#aebbc8':['screen','totem'].includes(o.kind)?'#0d7184':['pa','sub','monitor'].includes(o.kind)?'#303c4c':(o.color||'#35c6b0');
+ c.strokeStyle='#edf4fc';c.lineWidth=3;c.fillRect(-w/2,-h/2,w,h);c.strokeRect(-w/2,-h/2,w,h);
+ c.fillStyle='#fff';c.font='24px Arial';c.textAlign='center';c.fillText(o.name,0,h/2+28);c.restore()}
+ c.fillStyle='#c1d1df';c.font='30px Arial';c.fillText('TRASERA / CONTRA',cx-W*u/2,cy-D*u/2-30);c.fillText('FRENTE / PÚBLICO',cx-W*u/2,cy+D*u/2+55);
+ out.toBlob(blob=>download(blob,'STAGELAB-X-plano-completo.png'),'image/png');
+};
 $('printPlan').onclick=()=>{let d=projectData(),image=canvas.toDataURL('image/png'),p=d.document;$('printsheet').innerHTML=`<img src="${image}"><h1>${p.docTitle||d.project||'Plano de diseño'}</h1><div>STAGELAB X · PROFESSIONAL STUDIO</div><div class="tb"><div class="cell"><b>EVENTO / ARTISTA</b><br>${p.docEvent||''}</div><div class="cell"><b>RECINTO</b><br>${p.docVenue||''}</div><div class="cell"><b>TIPO DE PLANO</b><br>${p.docType||''}</div><div class="cell"><b>FECHA / N°</b><br>${p.docDate||''} / ${p.docNumber||''}</div><div class="cell"><b>DISEÑADOR</b><br>${p.designer||''}<br>${p.phone||''} · ${p.email||''}</div><div class="cell"><b>MEDIDAS</b><br>${d.stage.w} × ${d.stage.d} m · Altura ${d.stage.h} m</div></div><p>${p.notes||''}</p><small>Diseño conceptual. Verificar cargas, rigging, electricidad y normativa antes del montaje.</small>`;window.print()};
 $('logoFile').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>logoData=r.result;r.readAsDataURL(f)};
 $('saveProfile').onclick=()=>{let p={};['designer','phone','email'].forEach(id=>p[id]=$(id).value);localStorage.setItem('stagelab_x_profile',JSON.stringify(p));alert('Datos del diseñador guardados en este dispositivo.')};
