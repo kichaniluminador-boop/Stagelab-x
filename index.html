@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#080d14"><title>STAGELAB X 4.0 · 3D Studio</title>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#080d14"><title>STAGELAB X 4.5 · 3D Studio</title>
 <style>
 :root{--bg:#080d14;--panel:#111b29;--line:#2b3c50;--txt:#edf4fc;--muted:#9aadc2;--a:#35c6b0}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px system-ui,-apple-system,Segoe UI,sans-serif}header{height:58px;padding:8px 13px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#0c1420}header strong{letter-spacing:1.5px}header small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px}button,select,input{font:inherit;color:inherit}button,select{background:#1a293a;border:1px solid var(--line);border-radius:9px;padding:8px 10px}button:active{border-color:var(--a)}.primary{background:var(--a);color:#061512;font-weight:800;border-color:var(--a)}main{height:calc(100dvh - 58px);display:grid;grid-template-columns:215px 1fr 240px;gap:9px;padding:9px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:auto;min-width:0}.panel h3{font-size:11px;letter-spacing:1.3px;color:#b9c9da;padding:12px;margin:0;border-bottom:1px solid var(--line)}.items{padding:9px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.items button{text-align:left;font-size:11px;min-height:49px}.items button span{display:block;font-size:18px}.items button.active{border-color:var(--a);background:#163431}.group{grid-column:1/-1;color:var(--muted);font-size:10px;letter-spacing:1px;padding:7px 1px 0}.center{display:flex;flex-direction:column;gap:8px;min-width:0;min-height:0}.bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:var(--panel);padding:8px;border:1px solid var(--line);border-radius:11px}.bar .grow{flex:1}.view{flex:1;position:relative;min-height:250px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#182638,#070b11 70%)}#stage3d{width:100%;height:100%;display:block;touch-action:none}.hint{position:absolute;top:10px;left:10px;background:#07111dcc;color:#b5c7d9;border:1px solid #33465b;border-radius:7px;padding:6px 9px;font-size:10px;pointer-events:none}.hint2{position:absolute;bottom:10px;left:10px;color:#b5c7d9;background:#07111dcc;border-radius:7px;padding:6px 9px;font-size:10px;pointer-events:none}.props{padding:11px;display:grid;gap:9px}.field label{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}.field input{width:100%;background:#0a121d;border:1px solid var(--line);border-radius:7px;padding:8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:7px}.inventory{padding:10px;display:grid;gap:5px;font-size:11px;color:var(--muted)}.inventory b{color:white}.foot{font-size:10px;color:var(--muted);padding:10px}.mobiletools{display:none}
 @media(max-width:850px){main{display:flex;flex-direction:column;height:auto;min-height:calc(100dvh - 58px)}.center{order:0}.view{height:58vh;min-height:400px;flex:none}.left{order:1}.right{order:2}.items{grid-template-columns:repeat(3,1fr)}.group{grid-column:1/-1}.props{grid-template-columns:1fr 1fr}.panel h3{position:sticky;top:0;background:var(--panel);z-index:2}.bar button,.bar select{font-size:12px;padding:8px}}
 </style></head><body>
-<header><div><strong>STAGELAB X</strong><small>PLACEMENT MODE FIX · 4.3</small></div><div style="display:flex;gap:6px"><button id="undo">↶</button><button id="save">Guardar</button></div></header>
+<header><div><strong>STAGELAB X</strong><small>DISEÑO DESDE CERO · 4.5</small></div><div style="display:flex;gap:6px"><button id="undo">↶</button><button id="save">Guardar</button></div></header>
 <main>
 <aside class="panel left"><h3>BIBLIOTECA 3D · TOCA PARA AGREGAR</h3><div class="items" id="library">
 <div class="group">ESTRUCTURA</div>
@@ -17,7 +17,7 @@
 <button data-kind="drums"><span>♬</span>Batería</button><button data-kind="guitar"><span>♬</span>Guitarra</button><button data-kind="mic"><span>♩</span>Micrófono</button><button data-kind="audience"><span>♟</span>Público</button><button data-kind="barrier"><span>▥</span>Valla</button>
 </div><div class="foot">Selecciona un equipo y pulsa sobre el escenario para colocarlo. En 3D: un dedo gira, dos dedos hacen zoom y el botón derecho/segundo dedo permite desplazar la cámara.</div></aside>
 <section class="center"><div class="bar"><select id="view"><option value="free">3D libre</option><option value="front">Frontal</option><option value="side">Lateral</option><option value="top">Planta</option></select><button id="home">Centrar cámara</button><button id="grid">Cuadrícula ON</button><button id="placeMode" class="primary">Colocar: Truss</button><button id="selectMode">Seleccionar</button><span class="grow"></span><button id="delete">Eliminar seleccionado</button><button id="png" class="primary">Capturar PNG</button></div>
-<div class="view"><canvas id="stage3d"></canvas><div class="hint">VISTA 3D INTERACTIVA · ÓRBITA 360°</div><div class="hint2">Arrastra para orbitar · Pellizca para zoom · Toca para seleccionar</div></div>
+<div class="view"><canvas id="stage3d"></canvas><div class="hint">VISTA 3D INTERACTIVA · ÓRBITA 360°</div><div class="hint2">Arrastra para girar · Pellizca para zoom · Toca para colocar/seleccionar</div></div>
 <div class="bar"><span id="count" style="font-size:11px;color:var(--muted)">Elementos: 0</span><span class="grow"></span><button id="export">Exportar proyecto</button><button id="import">Abrir proyecto</button><input id="file" type="file" accept=".json" hidden></div></section>
 <aside class="panel right"><h3>ESCENARIO / PROPIEDADES</h3><div class="props">
 <div class="field"><label>Nombre del diseño</label><input id="title" value="Mi escenario"></div>
@@ -70,55 +70,48 @@ function choose(g){selected=g;objects.forEach(o=>o.traverse(m=>{if(m.isMesh){m.m
 function updateInventory(){$('count').textContent='Elementos: '+objects.length;let counts={};objects.forEach(o=>counts[o.userData.kind]=(counts[o.userData.kind]||0)+1);$('inventory').innerHTML=Object.keys(counts).length?Object.entries(counts).map(([k,v])=>`<div>${labels[k]} <b>× ${v}</b></div>`).join(''):'Todavía no hay equipos.'}
 function render(){renderer.render(scene,camera)}
 function resize(){let r=canvas.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();render()}
-function serialize(){return {version:'4.0',title:$('title').value,stage:{w:+$('sw').value,d:+$('sd').value,h:+$('sh').value},objects:objects.map(o=>({kind:o.userData.kind,x:o.position.x,y:o.position.y,z:o.position.z,rotX:o.rotation.x,rotY:o.rotation.y,rotZ:o.rotation.z,u:o.userData.dmxU,a:o.userData.dmxA}))}}
+function serialize(){return {version:'4.5',title:$('title').value,stage:{w:+$('sw').value,d:+$('sd').value,h:+$('sh').value},objects:objects.map(o=>({kind:o.userData.kind,x:o.position.x,y:o.position.y,z:o.position.z,rotX:o.rotation.x,rotY:o.rotation.y,rotZ:o.rotation.z,u:o.userData.dmxU,a:o.userData.dmxA}))}}
 function restore(d){objects.forEach(o=>root.remove(o));objects=[];$('title').value=d.title||'Mi escenario';$('sw').value=d.stage?.w||12;$('sd').value=d.stage?.d||8;$('sh').value=d.stage?.h||6;makeStage();(d.objects||[]).forEach(v=>{let g=make(v.kind);g.position.set(v.x||0,v.y||0,v.z||0);g.rotation.set(v.rotX||0,v.rotY||v.rot||0,v.rotZ||0);g.userData.dmxU=v.u||1;g.userData.dmxA=v.a||1;root.add(g);objects.push(g)});choose(null);updateInventory()}
 let stageGroup=new THREE.Group();scene.add(stageGroup);
 function makeStage(){
  stageGroup.clear();
- let w=+$('sw').value||12,d=+$('sd').value||8,h=+$('sh').value||6;
- // Solo tarima: escenario completamente abierto, sin paneles ni paredes.
- box(stageGroup,w,.22,d,mats.deck,0,.0,0);
- // Patas discretas bajo la tarima.
- for(let x of [-w/2+.35,w/2-.35]) for(let z of [-d/2+.35,d/2-.35])
-   box(stageGroup,.12,.42,.12,mats.al,x,-.30,z);
- // Pórtico de truss aéreo: cuatro torres y perímetro superior abierto.
- const trussMat=mats.al;
- function beamBetween(a,b,r=.10){
-   const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),delta=new THREE.Vector3().subVectors(B,A);
-   const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,delta.length(),8),trussMat);
-   mesh.position.copy(A).add(B).multiplyScalar(.5);
-   mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),delta.normalize());
-   mesh.castShadow=true;stageGroup.add(mesh);
- }
- const y=h, front=d/2, rear=-d/2, left=-w/2, right=w/2;
- // Cuatro torres de soporte independientes, sin cerramientos.
- for(const x of [left,right]) for(const z of [front,rear]){
-   beamBetween([x,.15,z],[x,y,z],.075);
-   for(let yy=.55;yy<y;yy+=.8){
-     beamBetween([x-.12,yy,z],[x+.12,yy+.8,z],.025);
-     beamBetween([x+.12,yy,z],[x-.12,yy+.8,z],.025);
-   }
- }
- // Frontal, contra y laterales superiores: solo tubos de truss.
- beamBetween([left,y,front],[right,y,front],.09);
- beamBetween([left,y,rear],[right,y,rear],.09);
- beamBetween([left,y,front],[left,y,rear],.09);
- beamBetween([right,y,front],[right,y,rear],.09);
- // Dos líneas cenitales para colgar luminarias.
- beamBetween([left,y-.08,0],[right,y-.08,0],.065);
- // La cuadrícula queda en el piso exterior; no crea paredes.
- let gridFloor=new THREE.GridHelper(Math.max(w,d)+12,Math.max(w,d)+12,0x34495e,0x24374b);
- gridFloor.position.y=-.045;stageGroup.add(gridFloor);
+ // Lienzo vacío: no se crea tarima, truss, paredes ni equipamiento.
+ // Solo una cuadrícula de referencia para diseñar desde cero.
+ let w=+$('sw').value||12,d=+$('sd').value||8;
+ const size=Math.max(w,d)+16;
+ const gridFloor=new THREE.GridHelper(size,Math.round(size),0x34495e,0x24374b);
+ gridFloor.position.y=-.035;
+ stageGroup.add(gridFloor);
+ // Ejes discretos en el origen para orientar X, Y y profundidad.
+ const axes=new THREE.AxesHelper(1.25);
+ axes.position.set(0,.015,0);
+ stageGroup.add(axes);
 }
 makeStage();
 const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let plane=new THREE.Plane(new THREE.Vector3(0,1,0),0),hitPoint=new THREE.Vector3();
+let pressStart=null,activePointers=new Set(),gestureMoved=false;
 canvas.addEventListener('pointerdown',e=>{
- if(e.pointerType==='touch'&&e.isPrimary===false)return;
+ activePointers.add(e.pointerId);
+ if(activePointers.size>1){gestureMoved=true;pressStart=null;return;}
+ pressStart={x:e.clientX,y:e.clientY,id:e.pointerId};
+ gestureMoved=false;
+});
+canvas.addEventListener('pointermove',e=>{
+ if(!pressStart||pressStart.id!==e.pointerId)return;
+ if(Math.hypot(e.clientX-pressStart.x,e.clientY-pressStart.y)>9)gestureMoved=true;
+});
+canvas.addEventListener('pointerup',e=>{
+ activePointers.delete(e.pointerId);
+ if(!pressStart||pressStart.id!==e.pointerId)return;
+ const moved=gestureMoved||Math.hypot(e.clientX-pressStart.x,e.clientY-pressStart.y)>9;
+ const wasMulti=activePointers.size>0;
+ const start=pressStart;pressStart=null;
+ // A drag rotates the camera; a two-finger gesture zooms. Neither adds equipment.
+ if(moved||wasMulti)return;
  let r=canvas.getBoundingClientRect();
  mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
  ray.setFromCamera(mouse,camera);
  if(mode==='place'){
-   // In placement mode, every tap places the currently chosen library item.
    if(ray.ray.intersectPlane(plane,hitPoint)) add(active,{x:hitPoint.x,y:0,z:hitPoint.z});
    return;
  }
@@ -126,6 +119,7 @@ canvas.addEventListener('pointerdown',e=>{
  if(hits.length){let g=hits[0].object.userData.owner;if(g){choose(g);return}}
  choose(null);
 });
+canvas.addEventListener('pointercancel',e=>{activePointers.delete(e.pointerId);pressStart=null;gestureMoved=true;});
 document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',e=>{
  e.preventDefault();e.stopPropagation();
  document.querySelectorAll('[data-kind]').forEach(x=>x.classList.remove('active'));
