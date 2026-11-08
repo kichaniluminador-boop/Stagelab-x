@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#080d14">
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
-<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="STAGELAB X">
@@ -242,6 +242,7 @@ $('moveTool').classList.add('primary');
 $('view').onchange=()=>{let v=$('view').value,t=controls.target;if(v==='front')camera.position.set(0,5,25);else if(v==='side')camera.position.set(25,5,0);else if(v==='top')camera.position.set(0,35,.01);else camera.position.set(16,13,19);controls.target.set(0,2,0);controls.update();render()};
 $('home').onclick=()=>{$('view').value='free';camera.position.set(16,13,19);controls.target.set(0,2,0);controls.update();render()};
 $('placeMode').onclick=e=>{e.preventDefault();e.stopPropagation();mode='place';const menu=$('placeMenu');const opening=!menu.classList.contains('open');menu.classList.toggle('open',opening);menu.style.display=opening?'grid':'none';$('placeMode').classList.add('primary');$('selectMode').classList.remove('primary')};
+document.addEventListener('click',e=>{const menu=$('placeMenu');if(!menu.contains(e.target)&&e.target!==$('placeMode')){menu.classList.remove('open');menu.style.display='none'}});
 $('selectMode').onclick=()=>{mode='select';$('selectMode').classList.add('primary');$('placeMode').classList.remove('primary')};
 
 $('grid').onclick=()=>{grid.visible=!grid.visible;$('grid').textContent='Cuadrícula '+(grid.visible?'ON':'OFF')};
